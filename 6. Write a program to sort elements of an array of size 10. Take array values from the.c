@@ -24,7 +24,7 @@ for(i=0;i<=9;i++)
  }
   printf("Sorted elements are  : ");
  for(i=0;i<=9;i++)
- { tem=b[i];
+ { 
     for(j=i+1;j<=9;j++)
     { 
         if(b[i]>b[j])
