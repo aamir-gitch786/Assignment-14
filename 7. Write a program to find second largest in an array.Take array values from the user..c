@@ -4,38 +4,37 @@
 *******************************************************************************/
 
 #include <stdio.h>
-#include<limits.h>
-int seconde_largest(int [],int n);
-int main()
+void Sort(int []);//function declaration.
+void main()
 {
-    int n,a[n];
-    printf("Enter the size of array :");
-    scanf("%d",&n);
-    printf("Seconde largest number is %d ",seconde_largest(a,n));
-   
+   int a[10];
+   Sort(a);
+  
 
-    return 0;
+    
 }
-int  seconde_largest(int a[],int n)
-{
-    int i,j,largest=INT_MIN,secondelargest=INT_MIN;
-    printf("Enter the number :");
-    for(i=0;i<n;i++)
-    scanf("%d",&a[i]);
-    for(j=0;j<n;j++)
-    {
-        if(largest<a[j])
+void Sort(int b[])
+{ int i,j,tem;
+printf("Enter the 10 values : ");
+for(i=0;i<=9;i++)
+ {
+    scanf("%d",&b[i]);
+ }
+ // for sorting the elements
+ for(i=0;i<=9;i++)
+ { tem=b[i];
+    for(j=i+1;j<=9;j++)
+    { 
+        if(b[i]>b[j])
         {
-           
-            secondelargest=largest;
-             largest=a[j];
-        }
-        else if(secondelargest<a[j] && a[j]<largest)//important seconde condition
-        {
-            secondelargest=a[j];
+            tem=b[i];
+            b[i]=b[j];
+            b[j]=tem;
         }
     }
-    return secondelargest;
-    
-    
+
+ }
+ printf(" Seconde largest element is %d ",b[8]);
+ 
+ 
 }
