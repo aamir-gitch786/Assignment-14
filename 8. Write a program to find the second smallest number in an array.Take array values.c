@@ -5,38 +5,38 @@ from the user.
 *******************************************************************************/
 
 #include <stdio.h>
-#include<limits.h>
-int seconde_smallest(int [],int n);
-int main()
-{
-    int n,a[n];
-    printf("Enter the size of array :");
-    scanf("%d",&n);
-    printf("Seconde smallest number is %d ",seconde_smallest(a,n));
-   
 
-    return 0;
-}
-int  seconde_smallest(int a[],int n)
+void Sort(int []);//function declaration.
+void main()
 {
-    int i,j,smallest=INT_MAX,secondesmallest=INT_MAX;
-    printf("Enter the number :");
-    for(i=0;i<n;i++)
-    scanf("%d",&a[i]);
-    for(j=0;j<n;j++)
-    {
-        if(smallest>a[j])
+   int a[10];
+   Sort(a);
+  
+
+    
+}
+void Sort(int b[])
+{ int i,j,tem;
+printf("Enter the 10 values : ");
+for(i=0;i<=9;i++)
+ {
+    scanf("%d",&b[i]);
+ }
+ // for sorting the elements
+ for(i=0;i<=9;i++)
+ { tem=b[i];
+    for(j=i+1;j<=9;j++)
+    { 
+        if(b[i]>b[j])
         {
-           
-            secondesmallest=smallest;
-             smallest=a[j];
-        }
-        else if(secondesmallest>a[j] && a[j]>smallest)//important seconde condition
-        {
-            secondesmallest=a[j];
+            tem=b[i];
+            b[i]=b[j];
+            b[j]=tem;
         }
     }
-    return secondesmallest;
-    
-    
+
+ }
+ printf(" Seconde smallest element is %d ",b[1]);
+ 
+ 
 }
