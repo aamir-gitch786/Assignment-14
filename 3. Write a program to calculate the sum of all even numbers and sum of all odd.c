@@ -5,7 +5,7 @@ numbers, which are stored in an array of size 10. Take array values from the use
 
 #include <stdio.h>
 void Even_odd(int []);//Array function declaration
-int Return(int []);//for returing two values at a time.
+
 int main()
 {
     int a[10];
